@@ -185,7 +185,7 @@ footer p{
 }
 @media only screen and (min-width: 768px) {
   #__next{
-    
+    column-gap: .75rem;
     grid-template-columns: 8rem 1fr 16rem;
     grid-template-areas:
     "header header header"
@@ -197,7 +197,7 @@ footer p{
   }  
   main{
     margin: 0;
-    
+   
   }
   sidenav{
     height: 100vh;
@@ -212,8 +212,9 @@ footer p{
     height: 100vh;
     position: sticky;
     top:3.1rem;
+    margin: 0;
     margin-top: .1rem;
-    margin-right: 0;
+    
     
   }
   footer{
