@@ -7,7 +7,9 @@ export default function Home() {
       <Link href="/status/love">
           <a>love</a>
         </Link>
-  
+  <Link href="/db">
+          <a>DB</a>
+        </Link>
     </>
   )
 }

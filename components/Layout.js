@@ -1,11 +1,10 @@
-
+import Link from 'next/link'
 const Layout = ({children}) => {
   return (
     <>
    
   <header>
-  
-  <a href="https://sharemyfeel.com" className="logo" >2Liner</a>
+  <Link href="/"><a className="logo" >2Liner</a></Link>
 <input className="hidden" type="checkbox" id="nav-toggle" style={{display: 'none'}} />
   <label for="nav-toggle" className="pointer-cursor" >
  
