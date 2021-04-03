@@ -10,7 +10,7 @@ export default function Profile() {
           <li>
             <h2>{statu.content}</h2>
           
-          </li>)
+          </li>
         ))}
-      </ul>
+      </ul>)
 }
