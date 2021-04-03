@@ -1,16 +1,25 @@
-import useSWR from 'swr'
+import useSWR from "swr";
 
-export default function Profile() {
-  const { status, error } = useSWR('/api/status', fetcher)
+const fetcher = url => fetch(url).then(res => res.json());
 
-  if (error) return <div>failed to load</div>
-  if (! status) return <div>loading...</div>
-  return   ( <ul>
-        {status.map((statu) => (
+export default function App() {
+  const { data, error } = useSWR(
+    "/api/status",
+    fetcher
+  );
+
+  if (error) return "An error has occurred.";
+  if (!data) return "Loading...";
+  return (
+<div>
+      { data.data.map((statu) => (
           <li>
+          hi
             <h2>{statu.content}</h2>
           
           </li>
-        ))}
-      </ul>)
+
+  ))}
+  </div>
+  )
 }
