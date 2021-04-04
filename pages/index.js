@@ -17,6 +17,7 @@ export default function Home() {
         </Link>
 <Link href="/time">
     <a>Time</a>
+</Link>
     </>
   )
 }
