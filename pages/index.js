@@ -15,6 +15,8 @@ export default function Home() {
   <Link href="/client">
           <a>Client</a>
         </Link>
+<Link href="/time">
+    <a>Time</a>
     </>
   )
 }
