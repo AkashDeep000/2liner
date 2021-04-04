@@ -5,7 +5,7 @@ export default function Page({ data }) {
   return(
     <>
     <li>{data.timezone}</li>
-    <li>{date}</li>
+    <li>{data.utc_datetime}</li>
     </>
     )
 }
@@ -17,5 +17,5 @@ export async function getStaticProps() {
   const data = await res.json()
 
   // Pass data to the page via props
-  return { props: { data }, revalidate: 60}
+  return { props: { data }, revalidate: 120}
 }
