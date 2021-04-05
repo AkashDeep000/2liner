@@ -1,21 +1,12 @@
 export default function Page({ data }) {
   // Render data...
   
- const  date = Date(data.utc_datetime);
+ const  date = Date.now();
   return(
     <>
-    <li>{data.timezone}</li>
-    <li>{data.utc_datetime}</li>
+    
+    <li>{date}</li>
     </>
     )
 }
 
-// This gets called on every request
-export async function getStaticProps() {
-  // Fetch data from external API
-  const res = await fetch(`http://worldtimeapi.org/api/ip`)
-  const data = await res.json()
-
-  // Pass data to the page via props
-  return { props: { data }, revalidate: 120}
-}
