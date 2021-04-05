@@ -5,7 +5,14 @@ export default function Home() {
   return (
     <>
       <a href="/imgplay-mod" download="ImgPlayMod>
-     <button className="logo">Download</button>
+     <button styly={{
+  background-color:  -webkit-linear-gradient(35deg, rgba(245, 51, 150, 1), rgba(245, 125, 86, 1));;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}}>Download</button>
        </a>
       <br />
   <Link href="/db">
