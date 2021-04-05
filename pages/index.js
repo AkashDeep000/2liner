@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <a href="/imgplay-mod" download="ImgPlayMod>
      <button styly={{
-  background-color:  -webkit-linear-gradient(35deg, rgba(245, 51, 150, 1), rgba(245, 125, 86, 1));;
+  background-color:  -webkit-linear-gradient(35deg, rgba(245, 51, 150, 1), rgba(245, 125, 86, 1));
   border: none;
   color: white;
   padding: 12px 30px;
@@ -15,6 +15,7 @@ export default function Home() {
 }}>Download</button>
        </a>
       <br />
+<hr />
   <Link href="/db">
     <a>DB</a>
           </Link>
