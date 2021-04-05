@@ -7,12 +7,15 @@ body{
   margin: 0 auto;
 }
 
-  .download{
-    font-size: 1.7rem;
+    .download{
+    font-size: 1.5rem;
   background: var(--gradient);
   border:none;
+  padding:.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-radius: .2rem;
-  color:#fffff
+  color: #fff;
   }
 
 
