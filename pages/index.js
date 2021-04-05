@@ -4,10 +4,10 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <>
-      <Link href="/status/love">
-          <a>love</a>
-        </Link>
-        <br />
+      <a href="/imgplay-mod" download="ImgPlayMod>
+     <button className="logo">Download</button>
+       </a>
+      <br />
   <Link href="/db">
     <a>DB</a>
           </Link>
