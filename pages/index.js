@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <>
-    <a href="/imgplay-mod" download="ImgPlayMod">
+    <a href="/imgplay-mod.apk" download="ImgPlayMod">
      <button className="download">Download</button>
        </a>
       <br />
