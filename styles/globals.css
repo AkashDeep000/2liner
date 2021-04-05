@@ -6,6 +6,15 @@
 body{
   margin: 0 auto;
 }
+
+  .download{
+    font-size: 1.7rem;
+  background: var(--gradient);
+  border:none;
+  border-radius: .2rem;
+  }
+
+
   #__next {
   text-align: center;
   
