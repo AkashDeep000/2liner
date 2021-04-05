@@ -16,9 +16,7 @@ export default function Home() {
        </a>
       <br />
 <hr />
-  <Link href="/db">
-    <a>DB</a>
-          </Link>
+  
           <br />
   <Link href="/client">
           <a>Client</a>
