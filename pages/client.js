@@ -9,7 +9,11 @@ export default function App() {
   );
 
   if (error) return "An error has occurred.";
-  if (!data) return "Loading...";
+  if (!data) return (
+    <>
+    <div class="spinner" role="spinner"><div class="spinner-icon"></div></div>
+    </>
+    );
   return (
 <div>
       { data.data.map((statu) => (
