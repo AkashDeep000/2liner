@@ -10,7 +10,7 @@ const Layout = ({children}) => {
          <link rel='manifest' href='/manifest.json' />
       </Head>
   
-  <header>
+  <div className="header">
   <Link href="/"><a className="logo" >ModApk</a></Link>
 <input className="hidden" type="checkbox" id="nav-toggle" style={{display: 'none'}} />
   <label for="nav-toggle" className="pointer-cursor" >
@@ -24,7 +24,7 @@ const Layout = ({children}) => {
 <ul><a href="">Nothing To Show 😟</a></ul>
 </div>
   </nav>
-</header>
+</div>
 <main>
 
 <div className="main-head">
