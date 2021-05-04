@@ -2,7 +2,7 @@ import Link from 'next/link'
 const Layout = ({children}) => {
   return (
     <>
-   
+   <link rel="manifest" href="/manifest.jsom">
   <header>
   <Link href="/"><a className="logo" >ModApk</a></Link>
 <input className="hidden" type="checkbox" id="nav-toggle" style={{display: 'none'}} />

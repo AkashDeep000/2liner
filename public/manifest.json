@@ -1,7 +1,7 @@
 {
   "theme_color": "#fe0000",
   "background_color": "#ffff",
-  "display": "browser",
+  "display": "standalone",
   "scope": "/",
   "start_url": "/",
   "app_name": "2Liner",
@@ -12,5 +12,11 @@
       "src": "/logo.png",
       "sizes": "192x192",
       "type": "image/png"
-    }]
+    },
+        {
+      "src": "/logo2.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+    ]
 }
