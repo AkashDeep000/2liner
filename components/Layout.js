@@ -1,8 +1,15 @@
 import Link from 'next/link'
+import Head from 'next/head'
+
 const Layout = ({children}) => {
   return (
     <>
-   <link rel="manifest" href="/manifest.jsom">
+     <Head>
+        <title>My page title</title>
+        <meta property="og:title" content="My page title" key="title" />
+         <link rel='manifest' href='/manifest.json' />
+      </Head>
+  
   <header>
   <Link href="/"><a className="logo" >ModApk</a></Link>
 <input className="hidden" type="checkbox" id="nav-toggle" style={{display: 'none'}} />

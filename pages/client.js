@@ -11,7 +11,7 @@ export default function App() {
   if (error) return "An error has occurred.";
   if (!data) return (
     <>
-    <div class="spinner" role="spinner"><div class="spinner-icon"></div></div>
+    <div className="spinner" role="spinner"><div className="spinner-icon"></div></div>
     </>
     );
   return (
