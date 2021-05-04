@@ -49,13 +49,13 @@ body{
 }
 
 .spinner-icon {
-  width: 28px;
-  height: 28px;
+  width: 35px;
+  height: 35px;
   box-sizing: border-box;
 
   border: solid 4px transparent;
-  border-top-color: rgba(245, 125, 86, 1);
-  border-left-color: rgba(245, 125, 86, 1);
+  border-top-color: rgba(245, 125, 86);
+  border-left-color: rgba(245, 91, 120);
   border-radius: 50%;
 
   -webkit-animation: nprogress-spinner 400ms linear infinite;
