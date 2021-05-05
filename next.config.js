@@ -1,15 +1,21 @@
 const withPWA = require('next-pwa')
 
-module.exports = withPWA({
+ module.exports = withPWA({
+  future: {webpack5: true},
   pwa: {
     dest: 'public',
-    register: true,
     disable: false,
+    register: true,
+    
     sw: 'service-worker.js',
-  }
-})
-
-module.exports = {
+    fallbacks: {
+      
+      document: '/fallback',  // if you want to fallback to a custom page other than /_offline
+      // font: '/static/font/fallback.woff2',
+      // audio: ...,
+      // video: ...,
+    }
+  },
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
     if (!dev && !isServer) {
@@ -22,4 +28,5 @@ module.exports = {
 
     return config;
   },
-};
+})
+
