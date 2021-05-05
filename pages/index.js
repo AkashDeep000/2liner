@@ -1,11 +1,12 @@
 import Head from 'next/head'
 
 import Link from 'next/link'
+const Build = process.env.CONFIG_BUILD_ID;
 export default function Home() {
   return (
     <>
     <a href="https://f000.backblazeb2.com/file/2liner/imgplay-mod.apk" download="ImgPlayMod">
-     <button className="download">Download</button>
+     <button className="download">Download{Build}</button>
        </a>
       <br />
 <hr />

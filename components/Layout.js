@@ -14,7 +14,7 @@ const Layout = ({children}) => {
   <div className="header">
   <Link href="/"><a className="logo" >ModApk</a></Link>
 <input className="hidden" type="checkbox" id="nav-toggle" style={{display: 'none'}} />
-  <label for="nav-toggle" className="pointer-cursor" >
+  <label htmlFor="nav-toggle" className="pointer-cursor" >
  
   </label>
 

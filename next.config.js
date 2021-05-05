@@ -1,10 +1,10 @@
 const withPWA = require('next-pwa')
-
+const webpack = require('webpack');
  module.exports = withPWA({
   future: {webpack5: true},
   pwa: {
     dest: 'public',
-    disable: false,
+    
     register: true,
     
     sw: 'service-worker.js',
@@ -16,7 +16,12 @@ const withPWA = require('next-pwa')
       // video: ...,
     }
   },
-  webpack: (config, { dev, isServer }) => {
+  webpack: (config, { dev, buildId, isServer }) => {
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        'process.env.CONFIG_BUILD_ID': JSON.stringify(buildId)
+      })
+    );
     // Replace React with Preact only in client production build
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {
@@ -28,5 +33,15 @@ const withPWA = require('next-pwa')
 
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: '/_next/data/{JSON.stringify(buildId)}/:slug*',
+        destination: '/_next/data/:slug*', // Matched parameters can be used in the destination
+        permanent: true,
+      },
+    ]
+  },
+  
 })
 
