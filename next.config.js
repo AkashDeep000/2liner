@@ -4,7 +4,8 @@ const webpack = require('webpack');
   future: {webpack5: true},
   pwa: {
     dest: 'public',
-    
+    //disable: process.env.NODE_ENV === 'development',
+  
     register: true,
     
     sw: 'service-worker.js',
@@ -33,15 +34,7 @@ const webpack = require('webpack');
 
     return config;
   },
-  async redirects() {
-    return [
-      {
-        source: '/_next/data/{JSON.stringify(buildId)}/:slug*',
-        destination: '/_next/data/:slug*', // Matched parameters can be used in the destination
-        permanent: true,
-      },
-    ]
-  },
+  
   
 })
 
