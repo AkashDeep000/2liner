@@ -8,7 +8,7 @@ const Layout = ({children}) => {
         <title>My page title</title>
         <meta property="og:title" content="My page title" key="title" />
          <link rel='manifest' href='/manifest.json' />
-         <meta name="theme-color" content="#ff3370e5">
+         <meta name="theme-color" content="#ff3370e5"/>
       </Head>
   
   <div className="header">
