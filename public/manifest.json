@@ -1,9 +1,10 @@
 {
-  "theme_color": "#fe0000",
+  "theme_color": "#ff3370e5",
   "background_color": "#ffff",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
+  "name": "2Liner",
   "app_name": "2Liner",
   "short_name": "2Liner",
   "description": "Example of a PWA",
