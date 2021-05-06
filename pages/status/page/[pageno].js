@@ -16,7 +16,7 @@ return { props: { pageno }, revalidate: 60}
 export default function Tweet({ pageno }) {
   const router = useRouter();
   if (router.isFallback) {
-    return <h1>Loading!</h1>
+    return (<div className="spinner" role="spinner"><div className="spinner-icon"></div></div>)
   }
 
   return (
