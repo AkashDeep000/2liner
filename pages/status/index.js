@@ -3,18 +3,18 @@ import { useRef, useEffect } from 'react'
 
 import fetcher from '../../libs/fetch'
 import useOnScreen from '../../hooks/useOnScreen'
-
 const Build = process.env.CONFIG_BUILD_ID;
-const PAGE_SIZE = 20
+
+
+const PAGE_SIZE = 10
 
 const getKey = (pageIndex, previousPageData, pageSize) => {
   if (previousPageData && !previousPageData.length) return null // reached the end
 
-  return `https://modapk.vercel.app/_next/data/${Build}/status/${pageIndex + 1}.json`
+  return `http://0.0.0.0:3000/_next/data/development/status/{pageIndex + 1}.json`
 }
 
-
-export default function Status() {
+export default function () {
   const ref = useRef()
   
 
@@ -26,6 +26,7 @@ export default function Status() {
   )
 
   const issues = data ? [].concat(...data) : []
+  console.log(issues) 
   const isLoadingInitialData = !data && !error
   const isLoadingMore =
     isLoadingInitialData ||
@@ -45,15 +46,19 @@ export default function Status() {
      
      
       {isEmpty ? <p>Yay, no issues found.</p> : null}
-      {issues.map((issue) => {
+      
+{
+    issues.map((issue) =>  {
         return (
-          <p key={issue.id} style={{ margin: '6px 0', height: 50 }}>
-            - {issue.title}
+
+          <p key={issue.pageProps.status[0]._id} style={{ margin: '6px 0', height: 50 }}>
+            - {issue.pageProps.status[0]. content}
           </p>
-        )
-      })}
+          )
+
+})}
       <div ref={ref}>
-        {isLoadingMore ? (<div className="spinner" role="spinner"><div className="spinner-icon"></div></div>) : isReachingEnd ? 'no more issues' : ''}
+        {isLoadingMore ? 'loading...' : isReachingEnd ? 'no more issues' : ''}
       </div>
     </div>
   )

@@ -1,29 +1,19 @@
-import useSWR from "swr";
+import useSWR from 'swr'
+import fetcher from '../libs/fetch'
 
-const fetcher = url => fetch(url).then(res => res.json());
+export default function Profile() {
+  const { data, error } = useSWR('http://0.0.0.0:3000/_next/data/development/status/1.json', fetcher)
 
-export default function App() {
-  const { data, error } = useSWR(
-    "/api/status",
-    fetcher
-  );
-
-  if (error) return "An error has occurred.";
-  if (!data) return (
-    <>
-    <div className="spinner" role="spinner"><div className="spinner-icon"></div></div>
-    </>
-    );
-  return (
-<div>
-      { data.data.map((statu) => (
-          <li>
-          hi
-            <h2>{statu.content}</h2>
-          
-          </li>
-
-  ))}
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
+  return <div>
+  
+        {data.pageProps.status.map((issue) => {
+        return (
+          <p key={issue._id} style={{ margin: '6px 0', height: 50 }}>
+            - {issue.content} 
+          </p>
+        )
+      })}
   </div>
-  )
 }

@@ -26,6 +26,7 @@ export default function () {
   )
 
   const issues = data ? [].concat(...data) : []
+  console.log(issues) 
   const isLoadingInitialData = !data && !error
   const isLoadingMore =
     isLoadingInitialData ||
