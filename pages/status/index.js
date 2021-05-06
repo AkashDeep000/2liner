@@ -77,7 +77,7 @@ export async function getStaticProps() {
   // Fetch data from external API
   const res = await fetch(`https://modapk.vercel.app/_next/data/${Build}/status/1.json`)
   const datee = await res.json()
-if (!data) {
+if (!datee) {
     return {
       notFound: true,
     }
