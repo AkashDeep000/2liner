@@ -27,7 +27,7 @@ return {
 export default function Tweet({ status }) {
   const router = useRouter();
   if (router.isFallback) {
-    return <h1>Loading!</h1>
+    return (<div className="spinner" role="spinner"><div className="spinner-icon"></div></div>)
   }
 
   return (
