@@ -3,18 +3,17 @@ import { useRef, useEffect } from 'react'
 
 import fetcher from '../../libs/fetch'
 import useOnScreen from '../../hooks/useOnScreen'
-const Build = process.env.CONFIG_BUILD_ID;
+
 const PAGE_SIZE = 20
 
 const getKey = (pageIndex, previousPageData, pageSize) => {
   if (previousPageData && !previousPageData.length) return null // reached the end
 
-  return `https://modapk.vercel.app/_next/data/${Build}/status/${
-    pageIndex + 2
-  }.json`
+  return `https://modapk.vercel.app/_next/data/${Build}/status/${pageIndex + 1}.json`
 }
 
-export default function ({ datee }) {
+
+export default function Status() {
   const ref = useRef()
   
 
@@ -40,20 +39,9 @@ export default function ({ datee }) {
     }
   }, [isVisible, isRefreshing])
 
-//for static time
-
   return (
-    <>
-  {datee.map((dateee) => {
-        return (
-     <p key={dateee.id} style={{color: '#282526cd', margin: '6px 0', height: 50 }}>
-            - {dateee.title}
-          </p>
-                  )
-      })}
     <div style={{ fontFamily: 'sans-serif' }}>
-               
-
+     
      
       {isEmpty ? <p>Yay, no issues found.</p> : null}
       {issues.map((issue) => {
@@ -67,22 +55,5 @@ export default function ({ datee }) {
         {isLoadingMore ? (<div className="spinner" role="spinner"><div className="spinner-icon"></div></div>) : isReachingEnd ? 'no more issues' : ''}
       </div>
     </div>
-    
-   </>
   )
-}
-
-// This gets called on every request
-export async function getStaticProps() {
-  // Fetch data from external API
-  const res = await fetch(`https://modapk.vercel.app/_next/data/${Build}/status/1.json`)
-  const datee = await res.json()
-if (!datee) {
-    return {
-      notFound: true,
-    }
-  }
-
-  // Pass data to the page via props
-  return { props: { datee }, revalidate: 60,}
 }

@@ -14,8 +14,9 @@ export default function Page({ data }) {
 }
 
 // This gets called on every request
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // Fetch data from external API
+
   const res = await fetch(`http://worldtimeapi.org/api/timezone/asia/kolkata`)
   const data = await res.json()
 
