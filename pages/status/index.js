@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react'
 import fetcher from '../../libs/fetch'
 import useOnScreen from '../../hooks/useOnScreen'
 
-onstt Build = process.env.CONFIG_BUILD_ID;
+const Build = process.env.CONFIG_BUILD_ID;
 const PAGE_SIZE = 20
 
 const getKey = (pageIndex, previousPageData, pageSize) => {
