@@ -11,7 +11,7 @@ const PAGE_SIZE = 10
 const getKey = (pageIndex, previousPageData, pageSize) => {
   if (previousPageData && !previousPageData.length) return null // reached the end
 
-  return `http://0.0.0.0:3000/_next/data/development/status/{pageIndex + 1}.json`
+  return `https://modapk.vercel.app/_next/data/${Build}/status/{pageIndex + 1}.json`
 }
 
 export default function () {
