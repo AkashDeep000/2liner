@@ -9,7 +9,7 @@ let PAGE_SIZE = 1//issues[0].pageProps.total
 const getKey = (pageIndex, previousPageData, pageSize) => {
   if (previousPageData && !previousPageData.pageProps) return null // reached the end
 
-  return `https//modapk.versel.app/_next/data/${Build}/status/${
+  return `https//modapk.vercel.app/_next/data/${Build}/status/${
     pageIndex + 1
   }.json`
 }
