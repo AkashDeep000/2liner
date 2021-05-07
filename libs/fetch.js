@@ -1,6 +1,12 @@
 import fetch from 'isomorphic-unfetch'
 
-export default async function (...args) {
+export default async function Test(...args) {
   const res = await fetch(...args)
-  return res.json()
+  const pl = res.json()
+  
+  
+  return pl;
+ 
 }
+
+

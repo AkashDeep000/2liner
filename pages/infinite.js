@@ -4,12 +4,12 @@ import { useRef, useEffect } from 'react'
 import fetcher from '../libs/fetch'
 import useOnScreen from '../hooks/useOnScreen'
 
-const PAGE_SIZE = 20
+const PAGE_SIZE = 10
 
 const getKey = (pageIndex, previousPageData, pageSize) => {
   if (previousPageData && !previousPageData.length) return null // reached the end
 
-  return `https://api.github.com/repos/facebook/react/issues?per_page=${pageSize}&page=${
+  return `https://api.github.com/repos/facebook/react/issues?per_page=2&page=${
     pageIndex + 1
   }`
 }
@@ -54,6 +54,7 @@ export default function () {
         )
       })}
       <div ref={ref}>
+      test
         {isLoadingMore ? 'loading...' : isReachingEnd ? 'no more issues' : ''}
       </div>
     </div>

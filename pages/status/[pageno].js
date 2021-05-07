@@ -16,14 +16,15 @@ export async function getStaticProps({ params }) {
     .skip(skiper)
     .limit(5)
     .toArray();
+    
+  const tota = await db.collection('status').count();
+  const total = Math.ceil(tota/5)
 return {
     props: {
       status: JSON.parse(JSON.stringify(status)),
-    },
+    total},
   };
-
 }
-
 export default function Tweet({ status }) {
   const router = useRouter();
   if (router.isFallback) {
@@ -32,7 +33,7 @@ export default function Tweet({ status }) {
 
   return (
         <ul>
-        {status.map((statu) => (
+              {status.map((statu) => (
           <li>
             <h2>{statu.content}</h2>
           

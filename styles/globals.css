@@ -226,7 +226,7 @@ main {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.main-content{
+#main-content{
   background: white;
   border-radius: 0.2rem;
   

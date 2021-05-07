@@ -3,15 +3,15 @@ import { useRef, useEffect } from 'react'
 
 import fetcher from '../../libs/fetch'
 import useOnScreen from '../../hooks/useOnScreen'
-const Build = process.env.CONFIG_BUILD_ID;
 
-
-const PAGE_SIZE = 10
+const PAGE_SIZE = 5
 
 const getKey = (pageIndex, previousPageData, pageSize) => {
   if (previousPageData && !previousPageData.length) return null // reached the end
 
-  return `https://modapk.vercel.app/_next/data/${Build}/status/{pageIndex + 1}.json`
+  return `http://0.0.0.0:3000/api/${
+    pageIndex + 1
+  }`
 }
 
 export default function () {
@@ -46,17 +46,13 @@ export default function () {
      
      
       {isEmpty ? <p>Yay, no issues found.</p> : null}
-      
-{
-    issues.map((issue) =>  {
+      {issues.map((issue) => {
         return (
-
-          <p key={issue.pageProps.status[0]._id} style={{ margin: '6px 0', height: 50 }}>
-            - {issue.pageProps.status[0]. content}
+          <p key={issue.data[0]._id} style={{ margin: '6px 0', height: 500 }}>
+            - {issue.data[0].content}
           </p>
-          )
-
-})}
+        )
+      })}
       <div ref={ref}>
         {isLoadingMore ? 'loading...' : isReachingEnd ? 'no more issues' : ''}
       </div>

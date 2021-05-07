@@ -31,7 +31,7 @@ const Layout = ({children}) => {
 <div className="main-head">
  <h1> Welcome To ModApk 👋</h1>
 </div>
-<div className="main-content">
+<div id="main-content">
    {children}
 </div>
 
