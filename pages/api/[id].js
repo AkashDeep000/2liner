@@ -11,6 +11,6 @@ export default async (req, res) => {
                 .limit(5)
                 .toArray();
                 
-
+           res.setHeader('Cache-Control', 's-maxage=86400')
            res.status(200).json({data : status})
           }

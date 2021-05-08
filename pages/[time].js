@@ -25,5 +25,5 @@ export async function getStaticProps({ params }) {
   const data = time;
   const tim = JSON.stringify(new Date());
   // Pass data to the page via props
-  return { props: { data, tim }, revalidate: 10}
+  return { props: { data, tim }, revalidate: 30}
 }
