@@ -9,7 +9,7 @@ let PAGE_SIZE = 1000//issues[0].pageProps.total
 const getKey = (pageIndex, previousPageData, pageSize) => {
   if (previousPageData && !previousPageData.pageProps) return null // reached the end
 
-  return `http://localhost:3000/_next/data/development/1.json`
+  return `/_next/data/${Build}/1.json`
 }
 
 export default function () {
