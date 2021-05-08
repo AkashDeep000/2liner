@@ -4,12 +4,12 @@ import { useRef, useEffect } from 'react'
 import fetcher from '../../libs/fetch'
 import useOnScreen from '../../hooks/useOnScreen'
 const Build = process.env.CONFIG_BUILD_ID;
-let PAGE_SIZE = 10//issues[0].pageProps.total
+let PAGE_SIZE = 1000//issues[0].pageProps.total
 
 const getKey = (pageIndex, previousPageData, pageSize) => {
   if (previousPageData && !previousPageData.pageProps) return null // reached the end
 
-  return `https://modapk.vercel.app/_next/data/jizHGEcpghJwk0o8s3tq7/1.json`
+  return `http://localhost:3000/_next/data/development/1.json`
 }
 
 export default function () {
@@ -54,17 +54,22 @@ console.log(issues)
            <div>
     
       <ul>
-              {
+              
             
-            issue.pageProps.map((issu) => {
-        return (
-                        <li key={issu.data}>
-            <h1>Please{issu.tim}</h1>
+            
+                        <li key={issue.pageProps.data}>
+                         <br />
           <br />
+             <br />
+          <br />
+            <h1>Please{issue.pageProps.tim}</h1>
+          <br />
+          <br />
+             <br />
           <br />
           </li>
-              )
-            })}
+              
+         
             
                 </ul>
     </div>
